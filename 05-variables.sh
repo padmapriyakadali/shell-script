@@ -2,4 +2,4 @@
 
 echo "please enter you username :: "
 
-read USER
+read PASS
