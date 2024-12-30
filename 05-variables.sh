@@ -2,6 +2,8 @@
 
 echo "please enter you username :: "
 
-read user 
+read USERNAME 
 
-echo "entered username is :: $user"
+echo "please enter your password :: "
+
+read -s PASSWORD 
