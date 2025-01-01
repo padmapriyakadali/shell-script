@@ -15,6 +15,7 @@ else
     else
         echo "installation is success"
     fi
+        echo "Mysql is already installed"
 fi
 dnf install git -y
     if [ $? -ne 0 ]
