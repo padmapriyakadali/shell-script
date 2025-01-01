@@ -2,6 +2,12 @@
 
 NUMBER1=$1
 
+if ! [[ "$input" =~ ^-?[0-9]+$ ]]; 
+then
+  echo "Error: Input is not an integer. Exiting."
+  exit 1
+fi
+
 if [ $NUMBER1 -gt 100 ]
 
 then 
