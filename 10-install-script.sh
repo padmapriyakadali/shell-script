@@ -19,7 +19,6 @@ if [ $? -ne 0 ]
     fi
         echo "Mysql is already installed"
 fi
-fi
 
 dnf list installed git
 if [ $? -ne 0 ]
