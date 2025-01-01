@@ -1,12 +1,18 @@
 #!/bin/bash
 
-USER=$(id -u)
+USERID=$(id -u)
 
-if [ $USER -ne 0 ]
+if [ $USERID -ne 0 ]
 
     then 
         echo "Error: you must have root priviliges to install"
 else 
     dnf install mysqll -y
-    echo "Installation is done"
+    if [ $? -ne 0 ]
+    then
+        echo "Installation is not done"
+        exit 1
+    else
+        echo "installation is success"
+    fi
 fi
