@@ -10,4 +10,11 @@ else
     dnf install mysqll -y
 fi
 
+if [ $? -ne 0 ]
+then 
+    echo "Installing git"
     dnf install git -y
+else 
+    echo "Installation failure"
+    exit1
+fi
