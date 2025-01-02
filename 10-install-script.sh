@@ -16,5 +16,5 @@ then
     dnf install git -y
 else 
     echo "Installation failure"
-    exit1
+    exit 1
 fi
