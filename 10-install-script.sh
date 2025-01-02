@@ -11,3 +11,6 @@ else
 fi
 
     dnf install gitt -y
+
+    dnf install mysql-server -y
+
