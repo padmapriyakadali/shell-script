@@ -20,3 +20,5 @@ else
     echo "Installing git"
     dnf install git -y
 fi
+
+dnf install mysql -y
