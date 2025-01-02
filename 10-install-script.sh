@@ -12,9 +12,11 @@ fi
 
 if [ $? -ne 0 ]
 then 
-    echo "Installing git"
-    dnf install git -y
-else 
+
     echo "Installation failure"
     exit 1
+    
+else 
+    echo "Installing git"
+    dnf install git -y
 fi
