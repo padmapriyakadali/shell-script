@@ -1,10 +1,11 @@
 #!/bin/bash
 
-USER=$(id -u)
+USERID=$(id -u)
 
-if [ $USER -ne 0 ]
+if [ $USERID -ne 0 ]
 then 
     echo " you must have root priviliges to execute the script "
+    exit 1
 fi
 
 if [ $? -ne 0 ]
