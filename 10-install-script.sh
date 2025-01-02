@@ -3,12 +3,9 @@
 USER=$(id -u)
 
 if [ $USER -ne 0 ]
-
 then 
     echo " you must have root priviliges to execute the script "
-else 
-    dnf install mysql -y
-fi
+if
 
 if [ $? -ne 0 ]
 then 
@@ -21,4 +18,3 @@ else
     dnf install git -y
 fi
 
-dnf install mysql -y
