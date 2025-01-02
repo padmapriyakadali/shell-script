@@ -7,7 +7,7 @@ if [ $USER -ne 0 ]
 then 
     echo " you must have root priviliges to execute the script "
 else 
-    dnf install mysqll -y
+    dnf install mysql -y
 fi
 
 if [ $? -ne 0 ]
