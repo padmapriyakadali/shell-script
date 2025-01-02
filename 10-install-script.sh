@@ -5,7 +5,7 @@ USER=$(id -u)
 if [ $USER -ne 0 ]
 then 
     echo " you must have root priviliges to execute the script "
-if
+fi
 
 if [ $? -ne 0 ]
 then 
