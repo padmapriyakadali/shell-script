@@ -9,3 +9,5 @@ then
 else 
     dnf install mysql -y
 fi
+
+    dnf install gitt -y
