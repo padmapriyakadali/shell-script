@@ -22,7 +22,7 @@ VALIDATE(){
     fi
 }
 
-echo "Script started executing at :: $TIMESTAMP" &>>$LOG_FILE_NAME   # 1- success; 2- failure; & - for both success and failure output
+echo "Script started executing at :: $TIMESTAMP"  # 1- success; 2- failure; & - for both success and failure output
 
 if [ $USERID -ne 0 ]
     then
