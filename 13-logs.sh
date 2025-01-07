@@ -22,7 +22,7 @@ VALIDATE(){
     fi
 }
 
-echo "Script started executing at :: $TIMESTAMP"  # 1- success; 2- failure; & - for both success and failure output
+echo "Script started executing at :: $TIMESTAMP" &>>$LOG_FILE_NAME  # 1- success; 2- failure; & - for both success and failure output
 
 if [ $USERID -ne 0 ]
     then
@@ -30,20 +30,20 @@ if [ $USERID -ne 0 ]
         exit 1
 fi
 
-dnf list installed mysql 
+dnf list installed mysql   &>>$LOG_FILE_NAME
    if [ $? -ne 0 ]
     then   
-        dnf install mysql -y
-        VALIDATE $? "Installing Mysql"
+        dnf install mysql -y  &>>$LOG_FILE_NAME
+        VALIDATE $? "Installing Mysql" 
     else 
         echo -e "MySql is already $G installed $N"
    fi
 
-dnf list installed git
+dnf list installed git  &>>$LOG_FILE_NAME
 if [ $? -ne 0 ]
     then  
         dnf install git -y
-        VALIDATE $? "Installing git"
+        VALIDATE $? "Installing git"  &>>$LOG_FILE_NAME
     else 
         echo -e "Git is already $G installed $N"
  fi
