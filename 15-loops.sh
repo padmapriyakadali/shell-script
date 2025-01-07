@@ -22,13 +22,19 @@ VALIDATE(){
     fi
 }
 
-echo "Script started executing at :: $TIMESTAMP" &>>$LOG_FILE_NAME  # 1- success; 2- failure; & - for both success and failure output
-
+CHECK_ROOT{
 if [ $USERID -ne 0 ]
     then
         echo "You must have root credentials to execute the script"
         exit 1
 fi
+
+}
+
+CHECK_ROOT
+
+echo "Script started executing at :: $TIMESTAMP" &>>$LOG_FILE_NAME  # 1- success; 2- failure; & - for both success and failure output
+
 
 for package in $@
 do 
