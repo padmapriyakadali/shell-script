@@ -8,7 +8,7 @@ N="\e[0m"
 
 LOGS_FOLDER="/var/logs/shellscript-logs"
 LOG_FILE=$(echo $0 | cut -d "." -f1)    # $0-script name
-TIMESTAMP= $(date +%Y-%m-%d-%H-%M-%S)
+TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 
 VALIDATE(){
@@ -22,7 +22,7 @@ VALIDATE(){
     fi
 }
 
-echo "Script started executing at :: $TIMESTAMP"
+echo "Script started executing at :: $TIMESTAMP" &>>$LOG_FILE_NAME   # 1- success; 2- failure; & - for both success and failure output
 
 if [ $USERID -ne 0 ]
     then
@@ -30,7 +30,7 @@ if [ $USERID -ne 0 ]
         exit 1
 fi
 
-dnf list installed mysql &>>LOG_FILE_NAME
+dnf list installed mysql 
    if [ $? -ne 0 ]
     then   
         dnf install mysql -y
