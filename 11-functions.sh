@@ -13,7 +13,7 @@ VALIDATE(){
     fi
 }
 
-if [ $? -ne 0 ]
+if [ $USERID -ne 0 ]
     then
         echo "You must have root credentials to execute the script"
         exit 1
