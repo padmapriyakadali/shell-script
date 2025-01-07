@@ -38,6 +38,6 @@ do
             echo "$package is already installed"
         else
             dnf install $package -y &>>$LOG_FILE_NAME
-            VALIDATE $? "installating $package"
+            VALIDATE $? "installing $package"
     fi
 done
