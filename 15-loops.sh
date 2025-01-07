@@ -39,4 +39,5 @@ do
         else
             dnf install $package -y &>>$LOG_FILE_NAME
             VALIDATE $? "installating $package"
+    fi
 done
