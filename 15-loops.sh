@@ -22,12 +22,13 @@ VALIDATE(){
     fi
 }
 
-CHECK_ROOT{
-if [ $USERID -ne 0 ]
+CHECK_ROOT(){
+
+    if [ $USERID -ne 0 ]
     then
         echo "You must have root credentials to execute the script"
         exit 1
-fi
+    fi
 
 }
 
